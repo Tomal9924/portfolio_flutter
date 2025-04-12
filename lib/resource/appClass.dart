@@ -12,56 +12,63 @@ class AppClass {
   ScrollController controller = ScrollController();
 
   /* URL */
-  static final resumeDownloadURL = '''https://jeeva-portfolio.s3.amazonaws.com/JEEVANANDHAM's+Resume.pdf''';
+  static final resumeDownloadURL =
+      '''https://jeeva-portfolio.s3.amazonaws.com/JEEVANANDHAM's+Resume.pdf''';
 
   static final gitSafeC19 = '''https://github.com/jeeva-HBK/SafeC19''';
 
   // static final gitHermarts = '''https://github.com/jeeva-HBK/SafeC19''';
   static final gitWtIot = '''https://github.com/jeeva-HBK/AutoChem''';
-  static final gitAutoStabilizer = '''https://github.com/jeeva-HBK/AutoStabilizer''';
+  static final gitAutoStabilizer =
+      '''https://github.com/jeeva-HBK/AutoStabilizer''';
   static final gitPAT = '''https://github.com/jeeva-HBK/PAT''';
 
   // static final gitAVM = '''https://github.com/jeeva-HBK/SafeC19''';
 
   List<WorkModel> projectList = [
     WorkModel(
-        projectTitle: "SafeC19",
+        projectTitle: "iEatery",
         projectContent:
-            "A fully automatic temperature and face mask detection solution for a completely contactless hand sanitizer. A solution so unique that it has integrated door access control if monitoring parameters are normal. An image is still captured and uploaded in cloud server on its own, as reference for auditing.",
-        tech1: "Android",
-        tech2: "Google-ML",
-        tech3: "Java"),
-    WorkModel(
-        projectTitle: "Hermarts",
-        projectContent:
-            "Hermarts is an Ecommerce website/mobile application specially designed to encourage and takeout the hidden talent of women candidates, who never gets opportunities to explore their talents. It is developed with user-centric features to help the users with integrated InApp payment mode with high level security.",
-        tech1: "Android",
-        tech2: "RazorPay"),
-    WorkModel(
-        projectTitle: "WT-IoT",
-        projectContent: '''It’s a water treatment process controller which can control all the sensors, calibration process, and staff management.''',
-        tech1: "Android",
-        tech2: "TCP",
-        tech3: "API"),
-    WorkModel(
-        projectTitle: "AutoStabilizer",
-        projectContent:
-            '''It is used to connect to a stabilizer and read the inlet and outlet voltage and several other parameters of the Stabilizer. This application will also set up the stabilizer hardware to connect the stabilizer to the Wi-Fi network. And with some features like PIR Sensor, Control Stabilizer with schedule, Standby Mode, Control Stabilizer with MobileData via AWS, and With WiFi via TCP Connection.''',
-        tech1: "Android",
-        tech2: "MQTT"),
-    WorkModel(
-        projectTitle: "PAT",
-        projectContent:
-            '''This application is to store and record the data of tested production product information for future reference. This application can reduce the time and ensure the performance and quality of the QA/QC people. This application let the super admin to track the workers and their performance. Through this application, we can calculate the time spent on every test that was taken to complete by the worker.''',
+            "iEatery is a convenient food delivery app that connects users with a wide range of local restaurants.Browse diverse menus, place orders, and enjoy doorstep delivery with just a few taps.The app features real-time order tracking and secure payment options.Personalized recommendations make discovering new meals easy and fun.Perfect for food lovers seeking variety and speed in their daily dining experience.",
         tech1: "Flutter",
-        tech2: "NodeJs",
-        tech3: "Flutter-Windows"),
+        tech2: "Clean architecture (BloC)",
+        tech3: ""),
     WorkModel(
-        projectTitle: "AVM",
+        projectTitle: "T-Score",
         projectContent:
-            '''AVM - Automatic Vending Machine is one of Pradeep's stainless steel product. The project is aimed at automating the beverage vending process. It can be done through hardware that controls the main engines and a mobile app (which acts like a PCB display for the unit) that is used to personalize and make beverage. It can also perform several process like Brewing, Boiling,cleansing drum etc . The Engines (hardware) and Mobiel Application communicate using Bluetooth.''',
-        tech1: "Android",
-        tech2: "Tablet"),
+            "T-Score Radio is users go-to app for live streaming cricket and football matches.Catch every moment with real-time commentary and high-quality streams.Stay updated with live scores, match schedules, and team stats.Enjoy smooth streaming and a user-friendly interface for an immersive experience.Perfect for sports fans who never want to miss a game on the go",
+        tech1: "Flutter",
+        tech2: "Live streaming using Agora.io"),
+    WorkModel(
+        projectTitle: "IEatery Restaurant App",
+        projectContent:
+            '''Discover and order from your favorite local restaurants with ease using iEatery.
+Enjoy a smooth, responsive experience built with clean architecture and BLoC pattern.
+Get real-time updates on order status, deals, and offers via push notifications.
+Browse menus and reorder faster thanks to intelligent local data caching.
+Whether dine-in or delivery, iEatery makes every meal just a tap away.''',
+        tech1: "Flutter",
+        tech2: "Local data caching",
+        tech3: "BloC"),
+    WorkModel(
+        projectTitle: "JEAL D/O ",
+        projectContent:
+            '''Jamuna Electronics and Automobiles Ltd is one of the largest manufacturers and retailers of Electronics products such as Refrigerator, Freezer, Television, Air Conditioner, Small Appliances, and Motor Cycles. It was established in 2014 with a large factory area of 100 Acores land. Use of Modern Machinery, Superb Technology, Skilled Manpower, Reliable source of Raw Materials and Continuous R&D produce high-quality products. Jamuna Electronics is known for its quality and durability.''',
+        tech1: "Flutter",
+        tech2: "User Management"),
+    WorkModel(
+        projectTitle: "iCare",
+        projectContent:
+            '''Attendance Management App, your all-in-one solution for tracking and managing your work attendance! Easily check in and out daily to keep your attendance records up to date. With our intuitive interface, you can quickly view your salary details and apply for attendance adjustments when needed.''',
+        tech1: "Flutter",
+        tech2: "Attendance Tracking",
+        tech3: ""),
+    WorkModel(
+        projectTitle: "Repose Fit",
+        projectContent:
+            '''Repose Fit is a Flutter-based fitness UI template designed for seamless user experience.''',
+        tech1: "Flutter",
+        tech2: "Progress tracking"),
   ];
 
   factory AppClass() {
@@ -79,7 +86,8 @@ class AppClass {
   }
 
   showSnackBar(String msg, {BuildContext? context}) {
-    ScaffoldMessenger.of(context ?? lastContext!).showSnackBar(SnackBar(content: Text(msg)));
+    ScaffoldMessenger.of(context ?? lastContext!)
+        .showSnackBar(SnackBar(content: Text(msg)));
   }
 
   ScreenType getScreenType(BuildContext context) {
@@ -100,14 +108,22 @@ class AppClass {
     showDialog(
         context: context,
         builder: (_) => AlertDialog(
-            title: Text(title, style: TxtStyle().boldWhite(context)),
-            content: Text(msg),
-            actions: [ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.green), onPressed: () => Navigator.pop(context), child: Text('Okay'))]));
+                title: Text(title, style: TxtStyle().boldWhite(context)),
+                content: Text(msg),
+                actions: [
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.green),
+                      onPressed: () => Navigator.pop(context),
+                      child: Text('Okay'))
+                ]));
   }
 
   Future<bool> sendEmail(name, contact, msg) async {
     var url = Uri.https('hbk-portfolio-mailer.web.app', '/sendMail');
-    var response = await post(url, body: {"name": name, "contactInfo": contact, "message": msg}).timeout(Duration(seconds: 10));
+    var response = await post(url,
+            body: {"name": name, "contactInfo": contact, "message": msg})
+        .timeout(Duration(seconds: 10));
     print(response.body);
     return response.statusCode == 200;
   }
