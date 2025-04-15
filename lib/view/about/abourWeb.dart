@@ -97,7 +97,7 @@ class _AboutWebState extends ConsumerState<AboutWeb> {
                               children: [
                                 Icon(Icons.arrow_right),
                                 Text(Strings.tech1,
-                                    style: GoogleFonts.robotoFlex(
+                                    style: GoogleFonts.rubik(
                                       color: AppColors().textLight,
                                       letterSpacing: 1,
                                       height: 1.5,

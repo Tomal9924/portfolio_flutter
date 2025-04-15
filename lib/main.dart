@@ -17,6 +17,7 @@ class AppTheme extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Tanvir Ahmed Portfolio',
       theme: ThemeData(
         brightness: Brightness.dark,
