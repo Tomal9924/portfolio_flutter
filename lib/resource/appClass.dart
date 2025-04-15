@@ -13,7 +13,7 @@ class AppClass {
 
   /* URL */
   static final resumeDownloadURL =
-      '''https://jeeva-portfolio.s3.amazonaws.com/JEEVANANDHAM's+Resume.pdf''';
+      '''https://drive.google.com/file/d/197qIb1NtWg0rOc_ck_lSFujM5GKmNcTw/view?usp=sharing''';
 
   static final gitSafeC19 = '''https://github.com/jeeva-HBK/SafeC19''';
 

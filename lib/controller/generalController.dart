@@ -8,8 +8,6 @@ var selectedExpProvider = StateProvider<int>((ref) => 0);
 
 var progressProvider = StateProvider<bool>((ref) => false);
 
-var gameScreenProvider = StateProvider<String?>((ref) => null);
-
 var scoreProvider = StateProvider<int>((ref) => 0);
 
 var scrollHandlerProvider = StateProvider<bool>((ref) => true);

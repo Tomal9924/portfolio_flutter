@@ -1,15 +1,20 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/resource/strings.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
+
+import 'package:portfolio/resource/strings.dart';
 
 import '../../resource/appClass.dart';
 import '../../resource/colors.dart';
 
 class IntroTab extends StatefulWidget {
-  AutoScrollController aScrollController;
+  final AutoScrollController aScrollController;
 
-  IntroTab(this.aScrollController, {Key? key}) : super(key: key);
+  IntroTab({
+    Key? key,
+    required this.aScrollController,
+  }) : super(key: key);
 
   @override
   State<IntroTab> createState() => _IntroTabState();
@@ -35,14 +40,18 @@ class _IntroTabState extends State<IntroTab> {
                   padding: const EdgeInsets.only(left: 8.0),
                   child: Text(
                     Strings.welcomeTxt,
-                    style: TextStyle(color: AppColors().neonColor, fontSize: AppClass().getMqWidth(context) * 0.025, fontFamily: 'sfmono'),
+                    style: TextStyle(
+                      color: AppColors().neonColor,
+                      fontSize: AppClass().getMqWidth(context) * 0.025,
+                      fontFamily: 'sfmono',
+                    ),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 8.0),
                   child: Text(
                     Strings.name,
-                    style: GoogleFonts.robotoSlab(
+                    style: GoogleFonts.rubik(
                       color: AppColors().textColor,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 3,
@@ -56,11 +65,11 @@ class _IntroTabState extends State<IntroTab> {
                     padding: const EdgeInsets.only(top: 5.0),
                     child: Text(
                       Strings.whatIdo,
-                      style: GoogleFonts.robotoSlab(
+                      style: GoogleFonts.rubik(
                         color: AppColors().textLight,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 3,
-                        fontSize: AppClass().getMqWidth(context) * 0.035,
+                        fontSize: AppClass().getMqWidth(context) * 0.0035,
                       ),
                     ),
                   ),
@@ -73,7 +82,7 @@ class _IntroTabState extends State<IntroTab> {
                         child: RichText(
                             text: TextSpan(
                                 text: Strings.introAbout,
-                                style: GoogleFonts.roboto(
+                                style: GoogleFonts.rubik(
                                   color: AppColors().textLight,
                                   letterSpacing: 1,
                                   height: 1.5,
@@ -82,7 +91,7 @@ class _IntroTabState extends State<IntroTab> {
                                 children: <TextSpan>[
                               TextSpan(
                                 text: Strings.currentOrgName,
-                                style: GoogleFonts.roboto(
+                                style: GoogleFonts.rubik(
                                   color: AppColors().neonColor,
                                   letterSpacing: 1,
                                   height: 1.5,
@@ -103,9 +112,18 @@ class _IntroTabState extends State<IntroTab> {
                     child: Container(
                       height: AppClass().getMqHeight(context) * 0.09,
                       width: AppClass().getMqWidth(context) * 0.25,
-                      decoration: BoxDecoration(color: Colors.transparent, borderRadius: BorderRadius.all(Radius.circular(3.0)), border: Border.all(color: AppColors().neonColor, width: 1.5)),
+                      decoration: BoxDecoration(
+                          color: Colors.transparent,
+                          borderRadius: BorderRadius.all(Radius.circular(3.0)),
+                          border: Border.all(color: AppColors().neonColor, width: 1.5)),
                       child: Center(
-                        child: Text('Check Out My Work!', style: TextStyle(color: AppColors().neonColor, fontSize: 13, letterSpacing: 1, fontWeight: FontWeight.bold, fontFamily: 'sfmono')),
+                        child: Text('Check Out My Work!',
+                            style: TextStyle(
+                                color: AppColors().neonColor,
+                                fontSize: 13,
+                                letterSpacing: 1,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'sfmono')),
                       ),
                     ),
                   ),

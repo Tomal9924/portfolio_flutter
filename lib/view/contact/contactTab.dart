@@ -25,19 +25,6 @@ class _ContactTabState extends ConsumerState<ContactTab> {
         children: [
           Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    '''04.''',
-                    style: TextStyle(color: AppColors().neonColor, fontSize: 14, fontFamily: 'sfmono'),
-                  ),
-                  Text(
-                    ''' What's next?''',
-                    style: TextStyle(color: AppColors().neonColor, fontSize: 16, fontFamily: 'sfmono'),
-                  ),
-                ],
-              ),
               Padding(
                 padding: const EdgeInsets.only(top: 8.0),
                 child: Text(

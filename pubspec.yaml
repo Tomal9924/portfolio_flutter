@@ -12,13 +12,13 @@ dependencies:
   flutter:
     sdk: flutter
 
-  google_fonts: ^6.1.0 #font
-  flutter_svg: ^1.1.1+1 #svg
-  flutter_riverpod: ^1.0.4 #state management
-  flutter_staggered_grid_view: 0.6.2 #staggedGrid
+  google_fonts: ^6.1.0
+  flutter_svg: ^1.1.1+1
+  flutter_riverpod: ^1.0.4 
+  flutter_staggered_grid_view: 0.6.2 
   url_launcher: ^6.3.1
-  scroll_to_index: ^3.0.1 #scrollToIndex
-  http: ^1.0.0 #httpclient
+  scroll_to_index: ^3.0.1
+  http: ^1.0.0
 
 dev_dependencies:
   flutter_test:

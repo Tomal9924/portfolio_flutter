@@ -25,19 +25,6 @@ class _ContactWebState extends ConsumerState<ContactWeb> {
         children: [
           Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    '''04.''',
-                    style: TextStyle(color: AppColors().neonColor, fontSize: 15, fontFamily: 'sfmono'),
-                  ),
-                  Text(
-                    ''' What's next?''',
-                    style: TextStyle(color: AppColors().neonColor, fontSize: 18, fontFamily: 'sfmono'),
-                  ),
-                ],
-              ),
               Padding(
                 padding: const EdgeInsets.only(top: 8.0),
                 child: Text(
@@ -75,9 +62,18 @@ class _ContactWebState extends ConsumerState<ContactWeb> {
                   child: Container(
                     height: AppClass().getMqHeight(context) * 0.09,
                     width: AppClass().getMqWidth(context) * 0.15,
-                    decoration: BoxDecoration(color: Colors.transparent, borderRadius: BorderRadius.all(Radius.circular(3.0)), border: Border.all(color: AppColors().neonColor, width: 1.5)),
+                    decoration: BoxDecoration(
+                        color: Colors.transparent,
+                        borderRadius: BorderRadius.all(Radius.circular(3.0)),
+                        border: Border.all(color: AppColors().neonColor, width: 1.5)),
                     child: Center(
-                      child: Text('Say Hello!', style: TextStyle(color: AppColors().neonColor, fontSize: 13, letterSpacing: 1, fontWeight: FontWeight.bold, fontFamily: 'sfmono')),
+                      child: Text('Say Hello!',
+                          style: TextStyle(
+                              color: AppColors().neonColor,
+                              fontSize: 13,
+                              letterSpacing: 1,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'sfmono')),
                     ),
                   ),
                 ),
@@ -118,7 +114,10 @@ class _ContactWebState extends ConsumerState<ContactWeb> {
               backgroundColor: AppColors().primaryColor,
               titleTextStyle: TextStyle(color: AppColors().neonColor, fontSize: 18, fontFamily: 'sfmono'),
               title: Row(
-                children: [Expanded(flex: 9, child: Text('Contact Me!')), IconButton(onPressed: () => Navigator.pop(context), icon: Icon(Icons.close, color: AppColors().textColor))],
+                children: [
+                  Expanded(flex: 9, child: Text('Contact Me!')),
+                  IconButton(onPressed: () => Navigator.pop(context), icon: Icon(Icons.close, color: AppColors().textColor))
+                ],
               ),
               content: Consumer(builder: (context, ref, child) {
                 bool isLoading = ref.watch(progressProvider);
@@ -205,7 +204,9 @@ class _ContactWebState extends ConsumerState<ContactWeb> {
                                       onTap: () async {
                                         if (_formKey.currentState!.validate()) {
                                           ref.read(progressProvider.notifier).state = true;
-                                          AppClass().sendEmail(nameController.text, contactInfoController.text, msgController.text).then((value) {
+                                          AppClass()
+                                              .sendEmail(nameController.text, contactInfoController.text, msgController.text)
+                                              .then((value) {
                                             if (value) {
                                               Navigator.pop(context);
                                               AppClass().showSnackBar('Message sent successfully', context: context);
@@ -224,9 +225,17 @@ class _ContactWebState extends ConsumerState<ContactWeb> {
                                         height: AppClass().getMqHeight(context) * 0.06,
                                         width: AppClass().getMqWidth(context) * 0.08,
                                         decoration: BoxDecoration(
-                                            color: Colors.transparent, borderRadius: BorderRadius.all(Radius.circular(3.0)), border: Border.all(color: AppColors().neonColor, width: 1.5)),
+                                            color: Colors.transparent,
+                                            borderRadius: BorderRadius.all(Radius.circular(3.0)),
+                                            border: Border.all(color: AppColors().neonColor, width: 1.5)),
                                         child: Center(
-                                          child: Text('Send', style: TextStyle(color: AppColors().neonColor, fontSize: 13, letterSpacing: 1, fontWeight: FontWeight.bold, fontFamily: 'sfmono')),
+                                          child: Text('Send',
+                                              style: TextStyle(
+                                                  color: AppColors().neonColor,
+                                                  fontSize: 13,
+                                                  letterSpacing: 1,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontFamily: 'sfmono')),
                                         ),
                                       ),
                                     ),

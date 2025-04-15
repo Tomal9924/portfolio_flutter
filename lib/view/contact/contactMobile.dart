@@ -30,19 +30,6 @@ class _ContactMobileState extends ConsumerState<ContactMobile> {
               children: [
                 Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          '''04.''',
-                          style: TextStyle(color: AppColors().neonColor, fontSize: AppClass().getMqWidth(context) * 0.04, fontFamily: 'sfmono'),
-                        ),
-                        Text(
-                          ''' What's next?''',
-                          style: TextStyle(color: AppColors().neonColor, fontSize: AppClass().getMqWidth(context) * 0.04, fontFamily: 'sfmono'),
-                        ),
-                      ],
-                    ),
                     Padding(
                       padding: const EdgeInsets.only(top: 8.0),
                       child: Text(

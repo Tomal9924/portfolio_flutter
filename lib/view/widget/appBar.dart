@@ -92,21 +92,6 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                               ),
                             ),
                             PopupMenuItem(
-                              onTap: () => mOnTab(4),
-                              child: Row(
-                                children: [
-                                  Icon(Icons.games, size: 18),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 10.0),
-                                    child: Text(
-                                      'Games',
-                                      style: GoogleFonts.roboto(),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            PopupMenuItem(
                               onTap: () => mOnTab(5),
                               child: Row(
                                 children: [
@@ -165,7 +150,11 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                             Consumer(builder: (context, ref, child) {
                               String state = ref.watch(hoverProvider);
                               bool isHovered = (state == "aboutTitle");
-                              return Text("About", style: TextStyle(color: isHovered ? AppColors().neonColor : AppColors().textColor, fontSize: 13, fontFamily: 'sfmono'));
+                              return Text("About",
+                                  style: TextStyle(
+                                      color: isHovered ? AppColors().neonColor : AppColors().textColor,
+                                      fontSize: 13,
+                                      fontFamily: 'sfmono'));
                             }),
                           ],
                         ),
@@ -190,7 +179,11 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                             Consumer(builder: (context, ref, child) {
                               String state = ref.watch(hoverProvider);
                               bool isHovered = (state == "expTitle");
-                              return Text("Experience", style: TextStyle(color: isHovered ? AppColors().neonColor : AppColors().textColor, fontSize: 13, fontFamily: 'sfmono'));
+                              return Text("Experience",
+                                  style: TextStyle(
+                                      color: isHovered ? AppColors().neonColor : AppColors().textColor,
+                                      fontSize: 13,
+                                      fontFamily: 'sfmono'));
                             }),
                           ],
                         ),
@@ -216,32 +209,11 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                               String state = ref.watch(hoverProvider);
                               bool isHovered = (state == "workTitle");
 
-                              return Text("Work", style: TextStyle(color: isHovered ? AppColors().neonColor : AppColors().textColor, fontSize: 13, fontFamily: 'sfmono'));
-                            }),
-                          ],
-                        ),
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {
-                        widget.controller.scrollToIndex(4, preferPosition: AutoScrollPosition.begin);
-                      },
-                      onHover: (bol) {
-                        if (bol) {
-                          ref.read(hoverProvider.notifier).state = "gameTitle";
-                        } else {
-                          ref.read(hoverProvider.notifier).state = "";
-                        }
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 30.0),
-                        child: Row(
-                          children: [
-                            Text("04.", style: TextStyle(color: AppColors().neonColor, fontSize: 13, fontFamily: 'sfmono')),
-                            Consumer(builder: (context, ref, child) {
-                              String state = ref.watch(hoverProvider);
-                              bool isHovered = (state == "gameTitle");
-                              return Text("Games", style: TextStyle(color: isHovered ? AppColors().neonColor : AppColors().textColor, fontSize: 13));
+                              return Text("Work",
+                                  style: TextStyle(
+                                      color: isHovered ? AppColors().neonColor : AppColors().textColor,
+                                      fontSize: 13,
+                                      fontFamily: 'sfmono'));
                             }),
                           ],
                         ),
@@ -266,7 +238,8 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                             Consumer(builder: (context, ref, child) {
                               String state = ref.watch(hoverProvider);
                               bool isHovered = (state == "contactTitle");
-                              return Text("Contact", style: TextStyle(color: isHovered ? AppColors().neonColor : AppColors().textColor, fontSize: 13));
+                              return Text("Contact",
+                                  style: TextStyle(color: isHovered ? AppColors().neonColor : AppColors().textColor, fontSize: 13));
                             }),
                           ],
                         ),
@@ -279,9 +252,18 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                       child: Container(
                         height: 40,
                         width: 80,
-                        decoration: BoxDecoration(color: Colors.transparent, borderRadius: BorderRadius.all(Radius.circular(3.0)), border: Border.all(color: AppColors().neonColor, width: 1.5)),
+                        decoration: BoxDecoration(
+                            color: Colors.transparent,
+                            borderRadius: BorderRadius.all(Radius.circular(3.0)),
+                            border: Border.all(color: AppColors().neonColor, width: 1.5)),
                         child: Center(
-                          child: Text('Resume', style: TextStyle(color: AppColors().neonColor, fontSize: 13, letterSpacing: 1, fontWeight: FontWeight.bold, fontFamily: 'sfmono')),
+                          child: Text('Resume',
+                              style: TextStyle(
+                                  color: AppColors().neonColor,
+                                  fontSize: 13,
+                                  letterSpacing: 1,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'sfmono')),
                         ),
                       ),
                     )
