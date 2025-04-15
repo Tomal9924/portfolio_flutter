@@ -36,7 +36,7 @@ class _LeftPaneState extends ConsumerState<LeftPane> {
                             height: AppClass().getMqHeight(context) * 0.07,
                             child: InkWell(
                               onTap: () async {
-                                await launchUrl(Uri.parse("https://github.com/Mr-Jeeva"));
+                                await launchUrl(Uri.parse("https://github.com/Tomal9924"));
                               },
                               onHover: (bol) {
                                 if (bol) {
@@ -55,26 +55,8 @@ class _LeftPaneState extends ConsumerState<LeftPane> {
                           Container(
                             height: AppClass().getMqHeight(context) * 0.07,
                             child: InkWell(
-                              onTap: () {},
-                              onHover: (bol) {
-                                if (bol) {
-                                  ref.read(hoverProvider.notifier).state = "insta";
-                                } else {
-                                  ref.read(hoverProvider.notifier).state = "";
-                                }
-                              },
-                              child: Container(
-                                margin: EdgeInsets.only(bottom: val == "insta" ? 5.0 : 0),
-                                padding: const EdgeInsets.only(bottom: 8.0),
-                                child: SvgPicture.asset('assets/svg/instagram.svg', color: val == "insta" ? AppColors().neonColor : AppColors().textColor, width: 22),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            height: AppClass().getMqHeight(context) * 0.07,
-                            child: InkWell(
                               onTap: () async {
-                                await launchUrl(Uri.parse("https://www.linkedin.com/in/jeeva-hbk/"));
+                                await launchUrl(Uri.parse("https://www.linkedin.com/in/tanvir2050/"));
                               },
                               onHover: (bol) {
                                 if (bol) {
@@ -93,26 +75,8 @@ class _LeftPaneState extends ConsumerState<LeftPane> {
                           Container(
                             height: AppClass().getMqHeight(context) * 0.07,
                             child: InkWell(
-                              onTap: () {},
-                              onHover: (bol) {
-                                if (bol) {
-                                  ref.read(hoverProvider.notifier).state = "twitter";
-                                } else {
-                                  ref.read(hoverProvider.notifier).state = "";
-                                }
-                              },
-                              child: Container(
-                                margin: EdgeInsets.only(bottom: val == "twitter" ? 5.0 : 0),
-                                padding: const EdgeInsets.only(bottom: 8.0),
-                                child: SvgPicture.asset('assets/svg/twitter.svg', color: val == "twitter" ? AppColors().neonColor : AppColors().textColor, width: 22),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            height: AppClass().getMqHeight(context) * 0.07,
-                            child: InkWell(
                               onTap: () async {
-                                await launchUrl(Uri.parse("https://stackoverflow.com/users/19705360/mr-jeeva"));
+                                await launchUrl(Uri.parse("https://stackoverflow.com/users/13256526/tanvir-ahmed"));
                               },
                               onHover: (bol) {
                                 if (bol) {

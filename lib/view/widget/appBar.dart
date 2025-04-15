@@ -47,19 +47,20 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                             PopupMenuItem(
                               onTap: () => mOnTab(1),
                               child: Container(
-                                  width: 90.0,
-                                  child: Row(
-                                    children: [
-                                      Icon(Icons.account_circle_rounded, size: 18),
-                                      Padding(
-                                        padding: const EdgeInsets.only(left: 10.0),
-                                        child: Text(
-                                          'About',
-                                          style: GoogleFonts.roboto(),
-                                        ),
+                                width: 90.0,
+                                child: Row(
+                                  children: [
+                                    Icon(Icons.account_circle_rounded, size: 18),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 10.0),
+                                      child: Text(
+                                        'About',
+                                        style: GoogleFonts.roboto(),
                                       ),
-                                    ],
-                                  )),
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
                             PopupMenuItem(
                               onTap: () => mOnTab(2),
@@ -78,6 +79,21 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                             ),
                             PopupMenuItem(
                               onTap: () => mOnTab(3),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.travel_explore_rounded, size: 18),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10.0),
+                                    child: Text(
+                                      'Skills',
+                                      style: GoogleFonts.roboto(),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            PopupMenuItem(
+                              onTap: () => mOnTab(4),
                               child: Row(
                                 children: [
                                   Icon(Icons.computer_rounded, size: 18),
@@ -195,7 +211,7 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                       },
                       onHover: (bol) {
                         if (bol) {
-                          ref.read(hoverProvider.notifier).state = "workTitle";
+                          ref.read(hoverProvider.notifier).state = "skiilsTtitle";
                         } else {
                           ref.read(hoverProvider.notifier).state = "";
                         }
@@ -205,6 +221,36 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                         child: Row(
                           children: [
                             Text("03. ", style: TextStyle(color: AppColors().neonColor, fontSize: 13, fontFamily: 'sfmono')),
+                            Consumer(builder: (context, ref, child) {
+                              String state = ref.watch(hoverProvider);
+                              bool isHovered = (state == "skiilsTtitle");
+
+                              return Text("Skills",
+                                  style: TextStyle(
+                                      color: isHovered ? AppColors().neonColor : AppColors().textColor,
+                                      fontSize: 13,
+                                      fontFamily: 'sfmono'));
+                            }),
+                          ],
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        widget.controller.scrollToIndex(4, preferPosition: AutoScrollPosition.begin);
+                      },
+                      onHover: (bol) {
+                        if (bol) {
+                          ref.read(hoverProvider.notifier).state = "workTitle";
+                        } else {
+                          ref.read(hoverProvider.notifier).state = "";
+                        }
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 30.0),
+                        child: Row(
+                          children: [
+                            Text("04. ", style: TextStyle(color: AppColors().neonColor, fontSize: 13, fontFamily: 'sfmono')),
                             Consumer(builder: (context, ref, child) {
                               String state = ref.watch(hoverProvider);
                               bool isHovered = (state == "workTitle");
@@ -219,6 +265,7 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                         ),
                       ),
                     ),
+                    
                     InkWell(
                       onTap: () {
                         widget.controller.scrollToIndex(5, preferPosition: AutoScrollPosition.begin);

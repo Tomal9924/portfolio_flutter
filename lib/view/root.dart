@@ -6,6 +6,7 @@ import 'package:portfolio/resource/appClass.dart';
 import 'package:portfolio/view/about/about.dart';
 import 'package:portfolio/view/experience/experience.dart';
 import 'package:portfolio/view/intro/intro.dart';
+import 'package:portfolio/view/skills.dart/skills_web.dart';
 import 'package:portfolio/view/widget/appBar.dart';
 import 'package:portfolio/view/widget/leftPane.dart';
 import 'package:portfolio/view/widget/rightPane.dart';
@@ -79,8 +80,9 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                                       key: ValueKey(0), controller: mScrollController, index: 0, child: IntroContent(mScrollController)),
                                   AutoScrollTag(key: ValueKey(1), controller: mScrollController, index: 1, child: About()),
                                   AutoScrollTag(key: ValueKey(2), controller: mScrollController, index: 2, child: Experience()),
-                                  AutoScrollTag(key: ValueKey(3), controller: mScrollController, index: 3, child: Work()),
-                                  AutoScrollTag(key: ValueKey(4), controller: mScrollController, index: 4, child: Contact())
+                                  AutoScrollTag(key: ValueKey(3), controller: mScrollController, index: 3, child: SkillsWeb()),
+                                  AutoScrollTag(key: ValueKey(4), controller: mScrollController, index: 4, child: Work()),
+                                  AutoScrollTag(key: ValueKey(5), controller: mScrollController, index: 5, child: Contact())
                                 ],
                               );
                             },

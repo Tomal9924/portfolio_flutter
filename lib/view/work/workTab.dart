@@ -18,7 +18,7 @@ class WorkTab extends ConsumerStatefulWidget {
 class _WorkWebState extends ConsumerState<WorkTab> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: AppClass().getMqHeight(context) - 70,
       child: Column(
         children: [

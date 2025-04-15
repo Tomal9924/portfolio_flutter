@@ -6,7 +6,6 @@ import 'package:portfolio/resource/appClass.dart';
 import '../../controller/generalController.dart';
 import '../../resource/colors.dart';
 import '../../resource/strings.dart';
-import 'contact.dart';
 
 class ContactMobile extends ConsumerStatefulWidget {
   const ContactMobile({Key? key}) : super(key: key);
