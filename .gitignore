@@ -28,3 +28,6 @@ doc/api/
 ios/.DS_Store
 ios/Podfile.lock
 ios/Runner.xcodeproj/project.pbxproj
+.flutter-plugins
+.flutter-plugins-dependencies
+pubspec.lock
