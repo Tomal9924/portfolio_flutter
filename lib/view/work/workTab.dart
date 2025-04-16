@@ -19,16 +19,19 @@ class _WorkWebState extends ConsumerState<WorkTab> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: AppClass().getMqHeight(context) - 70,
+      height: AppClass().getMqHeight(context) - 20,
       child: Column(
         children: [
           RichText(
-            text: TextSpan(text: "03.", style: TextStyle(color: AppColors().neonColor, fontSize: 20, fontFamily: 'sfmono'), children: <TextSpan>[
-              TextSpan(
-                text: ' My Noteworthy Projects',
-                style: GoogleFonts.roboto(color: AppColors().textColor, letterSpacing: 1, fontWeight: FontWeight.bold, fontSize: 18),
-              )
-            ]),
+            text: TextSpan(
+                text: "03.",
+                style: TextStyle(color: AppColors().neonColor, fontSize: 20, fontFamily: 'sfmono'),
+                children: <TextSpan>[
+                  TextSpan(
+                    text: ' My Noteworthy Projects',
+                    style: GoogleFonts.roboto(color: AppColors().textColor, letterSpacing: 1, fontWeight: FontWeight.bold, fontSize: 18),
+                  )
+                ]),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
@@ -39,7 +42,7 @@ class _WorkWebState extends ConsumerState<WorkTab> {
           ),
           Expanded(
             child: Container(
-              padding: EdgeInsets.only(top: 30.0, bottom: 50.0),
+              padding: EdgeInsets.only(top: 30.0, bottom: 10.0),
               child: PageView(
                 children: [
                   Tile(index: 0),
@@ -60,15 +63,15 @@ class _WorkWebState extends ConsumerState<WorkTab> {
       onTap: () async {
         switch (index) {
           case 0:
-            await launchUrl(Uri.parse(AppClass.gitSafeC19));
+            await launchUrl(Uri.parse(AppClass.gitIeatery));
             break;
 
           case 1:
-            AppClass().alertDialog(context, 'Not Found', 'Sorry the project you requested not found in the repository');
+            await launchUrl(Uri.parse(AppClass.tScore));
             break;
 
           case 2:
-            await launchUrl(Uri.parse(AppClass.gitWtIot));
+            await launchUrl(Uri.parse(AppClass.tScore));
             break;
 
           case 3:
@@ -76,11 +79,11 @@ class _WorkWebState extends ConsumerState<WorkTab> {
             break;
 
           case 4:
-            await launchUrl(Uri.parse(AppClass.gitPAT));
+            await launchUrl(Uri.parse(AppClass.iCare));
             break;
 
           case 5:
-            AppClass().alertDialog(context, 'Not Found', 'Sorry the project you requested not found in the repository');
+            await launchUrl(Uri.parse(AppClass.reposeFit));
             break;
         }
       },
@@ -124,7 +127,10 @@ class _WorkWebState extends ConsumerState<WorkTab> {
                             AppClass().projectList[index].projectTitle.toString(),
                             textAlign: TextAlign.left,
                             style: GoogleFonts.robotoSlab(
-                                color: isHovered ? AppColors().neonColor : Colors.white, letterSpacing: 1, fontWeight: FontWeight.bold, fontSize: AppClass().getMqWidth(context) * 0.04),
+                                color: isHovered ? AppColors().neonColor : Colors.white,
+                                letterSpacing: 1,
+                                fontWeight: FontWeight.bold,
+                                fontSize: AppClass().getMqWidth(context) * 0.04),
                           ),
                         ],
                       ),

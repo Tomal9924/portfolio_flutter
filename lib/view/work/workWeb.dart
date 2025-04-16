@@ -22,12 +22,15 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
     return Column(
       children: [
         RichText(
-          text: TextSpan(text: "04.", style: TextStyle(color: AppColors().neonColor, fontSize: 20, fontFamily: 'sfmono'), children: <TextSpan>[
-            TextSpan(
-              text: ' My Noteworthy Projects',
-              style: GoogleFonts.roboto(color: AppColors().textColor, letterSpacing: 1, fontWeight: FontWeight.bold, fontSize: 25),
-            )
-          ]),
+          text: TextSpan(
+              text: "04.",
+              style: TextStyle(color: AppColors().neonColor, fontSize: 20, fontFamily: 'sfmono'),
+              children: <TextSpan>[
+                TextSpan(
+                  text: ' My Noteworthy Projects',
+                  style: GoogleFonts.roboto(color: AppColors().textColor, letterSpacing: 1, fontWeight: FontWeight.bold, fontSize: 25),
+                )
+              ]),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 8.0),
@@ -85,7 +88,7 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
       onTap: () async {
         switch (index) {
           case 0:
-            await launchUrl(Uri.parse(AppClass.gitSafeC19));
+            await launchUrl(Uri.parse(AppClass.gitIeatery));
             break;
 
           case 1:
@@ -93,7 +96,7 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
             break;
 
           case 2:
-            await launchUrl(Uri.parse(AppClass.gitWtIot));
+            await launchUrl(Uri.parse(AppClass.tScore));
             break;
 
           case 3:
@@ -101,7 +104,7 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
             break;
 
           case 4:
-            await launchUrl(Uri.parse(AppClass.gitPAT));
+            await launchUrl(Uri.parse(AppClass.iCare));
             break;
 
           case 5:
@@ -122,7 +125,8 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
         return Container(
           margin: EdgeInsets.all(isHovered ? 8.0 : 0.0),
           child: Tooltip(
-            message: AppClass().projectList[index].projectTitle.toString() + "\n\n" + AppClass().projectList[index].projectContent.toString(),
+            message:
+                AppClass().projectList[index].projectTitle.toString() + "\n\n" + AppClass().projectList[index].projectContent.toString(),
             padding: EdgeInsets.all(20),
             margin: EdgeInsets.all(AppClass().getMqWidth(context) * 0.1),
             waitDuration: Duration(seconds: 3),
@@ -165,7 +169,11 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                           Text(
                             AppClass().projectList[index].projectTitle.toString(),
                             textAlign: TextAlign.left,
-                            style: GoogleFonts.robotoSlab(color: isHovered ? AppColors().neonColor : Colors.white, letterSpacing: 1, fontWeight: FontWeight.bold, fontSize: 20),
+                            style: GoogleFonts.robotoSlab(
+                                color: isHovered ? AppColors().neonColor : Colors.white,
+                                letterSpacing: 1,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20),
                           ),
                         ],
                       ),

@@ -64,7 +64,7 @@ class _AboutWebState extends ConsumerState<SkillsWeb> {
           ...skills.map((category) {
             final title = category.keys.first;
             final items = category[title]!;
-      
+
             return Padding(
               padding: const EdgeInsets.only(bottom: 30.0),
               child: Column(
@@ -88,15 +88,13 @@ class _AboutWebState extends ConsumerState<SkillsWeb> {
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(Icons.circle, color: Colors.white70, size: 18),
+                              Icon(Icons.circle, color: Colors.white70, size: 14),
                               const SizedBox(width: 10),
                               Flexible(
                                 child: Text(
                                   skill,
-                                  style: const TextStyle(
-                                    color: Colors.white70,
-                                    fontSize: 16,
-                                  ),
+                                  style: GoogleFonts.roboto(
+                                      color: AppColors().neonColor, letterSpacing: 1, fontWeight: FontWeight.bold, fontSize: 12),
                                 ),
                               ),
                             ],
